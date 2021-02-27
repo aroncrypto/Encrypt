@@ -24,13 +24,13 @@ pass>''')
         sys.exit()
     elif key=='themobilehacker':
         key='false'
-        return(key)
+        return(key) 
     key=hashlib.md5(str(key.replace(n1+n2,'')).encode())
     key=key.hexdigest()
     key=base64.urlsafe_b64encode(bytes(str(key),'utf-8'))
     return(key)
 #uses the given key to encrypt a file with the given filename
-def enc(key):
+def enc(key):  
     print('')
     fi=input('filename>')
     print('')
@@ -46,7 +46,7 @@ def enc(key):
     print('')
     en=f(key).encrypt(fd)
     open(fi+'.enc','wb').write(en)
-    print('      ***file encrypted***')
+    print('        ***file encrypted***')
     os.system('rm -rf enc.zip')
     print('')
 #uses the given key to decrypt a file with the given filename
